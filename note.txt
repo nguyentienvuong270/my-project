@@ -1,0 +1,12 @@
+Ctrl + Shift + `
+Các câu lệnh git cơ bản
+Repository: (Kho chứa dữ liệu của git), 2 loại Repository
+1. Local Repo: Chỉ có trên máy.
+2. Remote Repo: Kho online.     
+
+git init : Tạo Repository ở Local
+git add . : Đẩy tất cả các file vào trong 1 vùng nhớ (staging)
+git commit -m "..." : Đẩy từ vùng nhớ tạm thời vào Local Repo và đánh dấu 1 dấu mốc lịch sử (Snap short) tại đây
+
+
+
