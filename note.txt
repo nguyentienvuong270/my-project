@@ -5,8 +5,13 @@ Repository: (Kho chứa dữ liệu của git), 2 loại Repository
 2. Remote Repo: Kho online.     
 
 git init : Tạo Repository ở Local
-git add . : Đẩy tất cả các file vào trong 1 vùng nhớ (staging)
+git add . : Đẩy tất cả các file vào trong 1 vùng nhớ (staging) git add < tên file>: đẩy file sửa
 git commit -m "..." : Đẩy từ vùng nhớ tạm thời vào Local Repo và đánh dấu 1 dấu mốc lịch sử (Snap short) tại đây
+git remote... : kết nối Local Repo với remote Repo
+git push origin master: đẩy những thay đổi từ local lên github.
 
+Lưu ý : từ lần thử với dự án này : git add, commit, push origin master
 
+git clone: copy dự án từ remote về local.
+git pull: kéo dữ liệu mới nhất từ dự án về.
 
