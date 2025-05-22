@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+
+<body>
+    <label for="side">Nhập độ dài cạnh a:</label>
+    <input type="number" id="side">
+    <button onclick="calculateArea()">Tính diện tích</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateArea() {
+            let side = +parseFloat(document.getElementById("side").value);
+            if (isNaN(side) || side <= 0) {
+                document.getElementById("result").innerText = "Vui lòng nhập số hợp lệ và lớn hơn 0.";
+                return;
+            }
+            let area = side * side;
+            document.getElementById("result").innerText = "Diện tích hình vuông là: " + area.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

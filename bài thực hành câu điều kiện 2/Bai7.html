@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7</title>
+</head>
+
+<body>
+    <p>Phương trình dạng: ax² + bx + c = 0</p>
+
+    <label>Nhập a: <input type="number" id="a"></label><br><br>
+    <label>Nhập b: <input type="number" id="b"></label><br><br>
+    <label>Nhập c: <input type="number" id="c"></label><br><br>
+
+    <button onclick="giaiPT()">Giải phương trình</button>
+    <p id="ketqua"></p>
+
+    <script>
+        function giaiPT() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let c = parseFloat(document.getElementById("c").value);
+            let ketqua = document.getElementById("ketqua");
+
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                ketqua.innerText = "Vui lòng nhập đầy đủ a, b, c.";
+                return;
+            }
+
+            if (a === 0) {
+                if (b === 0) {
+                    ketqua.innerText = (c === 0) ? "Phương trình vô số nghiệm." : "Phương trình vô nghiệm.";
+                } else {
+                    let x = -c / b;
+                    ketqua.innerText = "Phương trình có nghiệm x = " + x;
+                }
+                return;
+            }
+
+            let delta = b * b - 4 * a * c;
+            if (delta < 0) {
+                ketqua.innerText = "Phương trình vô nghiệm.";
+            } else if (delta === 0) {
+                let x = -b / (2 * a);
+                ketqua.innerText = "Phương trình có nghiệm kép x = " + x;
+            } else {
+                let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                ketqua.innerText = "Phương trình có 2 nghiệm phân biệt:\nx₁ = " + x1 + ", x₂ = " + x2;
+            }
+        }
+    </script>
+</body>
+
+</html>

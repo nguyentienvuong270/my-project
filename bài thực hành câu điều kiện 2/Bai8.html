@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 8</title>
+</head>
+
+<body>
+    <p>Nhập một số và kiểm tra xem đó có phải là tuổi hợp lệ (tuổi từ 1 đến 120):</p>
+
+    <label>Nhập tuổi: <input type="number" id="tuoi"></label><br><br>
+
+    <button onclick="kiemTraTuoi()">Kiểm tra</button>
+    <p id="ketqua"></p>
+
+    <script>
+        function kiemTraTuoi() {
+            let tuoi = parseInt(document.getElementById("tuoi").value);
+            let ketqua = document.getElementById("ketqua");
+
+            if (isNaN(tuoi)) {
+                ketqua.innerText = "Vui lòng nhập một số hợp lệ.";
+                return;
+            }
+
+            if (tuoi > 0 && tuoi < 120) {
+                ketqua.innerText = "Tuổi hợp lệ!";
+            } else {
+                ketqua.innerText = "Tuổi không hợp lệ. Tuổi phải từ 1 đến 120.";
+            }
+        }
+    </script>
+</body>
+
+</html>

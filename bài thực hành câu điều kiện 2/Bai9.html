@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 9</title>
+</head>
+
+<body>
+    <h1>Nhập 3 cạnh a, b, c:</h1>
+
+    <label>a: <input type="number" id="a" step="any"></label><br><br>
+    <label>b: <input type="number" id="b" step="any"></label><br><br>
+    <label>c: <input type="number" id="c" step="any"></label><br><br>
+
+    <button onclick="kiemTraTamGiac()">Kiểm tra</button>
+    <p id="ketqua"></p>
+
+    <script>
+        function kiemTraTamGiac() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let c = parseFloat(document.getElementById("c").value);
+            let ketqua = document.getElementById("ketqua");
+
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                ketqua.innerText = "Vui lòng nhập đầy đủ 3 số thực a, b, c.";
+                return;
+            }
+
+               if (a > 0 && b > 0 && c > 0 && 
+                a + b > c && 
+                b + c > a && 
+                a + c > b) {
+                ketqua.innerText = "Ba cạnh a, b, c có thể tạo thành một tam giác.";
+            } else {
+                ketqua.innerText = "Ba cạnh a, b, c không thể tạo thành một tam giác.";
+            }
+        }
+    </script>
+</body>
+
+</html>

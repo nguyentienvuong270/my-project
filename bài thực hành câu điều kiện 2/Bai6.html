@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6</title>
+</head>
+
+<body>
+    <label for="a">Nhập hệ số a:</label>
+    <input type="number" id="a"><br><br>
+
+    <label for="b">Nhập hệ số b:</label>
+    <input type="number" id="b"><br><br>
+
+    <button onclick="solveLinearEquation()">Giải phương trình</button>
+
+    <p id="result"></p>
+
+    <script>
+        function solveLinearEquation() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById("result").innerText = "Vui lòng nhập số hợp lệ.";
+                return;
+            }
+
+            if (a === 0) {
+                if (b === 0) {
+                    document.getElementById("result").innerText = "Phương trình có vô số nghiệm.";
+                } else {
+                    document.getElementById("result").innerText = "Phương trình vô nghiệm.";
+                }
+            } else {
+                let x = -b / a;
+                document.getElementById("result").innerText = "Nghiệm của phương trình là: x = " + x.toFixed(2);
+            }
+        }
+    </script>
+</body>
+
+</html>
