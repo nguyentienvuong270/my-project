@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="400"
+      height="300"
+      style="border: 1px solid #000000"
+    ></canvas>
+
+    <script>
+      
+      class Rectangle {
+        constructor(length, width) {
+          this.length = length;
+          this.width = width;
+        }
+
+        getArea() {
+          return this.length * this.width;
+        }
+
+        getPerimeter() {
+          return 2 * (this.length + this.width);
+        }
+
+        draw(ctx, x = 0, y = 0, color = "blue") {
+          ctx.fillStyle = color;
+          ctx.fillRect(x, y, this.width, this.length);
+        }
+      }
+
+      
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+
+      const rect = new Rectangle(100, 200); 
+      rect.draw(ctx, 50, 50, "green"); 
+      
+
+      console.log("Diện tích:", rect.getArea()); 
+      console.log("Chu vi:", rect.getPerimeter());
+    </script>
+  </body>
+</html>

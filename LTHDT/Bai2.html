@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Circle {
+        constructor() {
+          this.radius = 0.0;
+          this.color = "red";
+        }
+
+        getRadius() {
+          return this.radius;
+        }
+
+        getArea() {
+          return Math.PI * this.radius * this.radius;
+        }
+      }
+      let c = new Circle();
+
+      c.radius = 5.5;
+      c.color = "blue";
+
+      console.log("Bán kính:", c.getRadius());
+      console.log("Diện tích:", c.getArea().toFixed(2));
+    </script>
+  </body>
+</html>

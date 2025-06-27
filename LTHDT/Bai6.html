@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Mobile {
+        constructor(name) {
+          this.name = name; // Tên thiết bị (tuỳ chọn)
+          this.battery = 100; // Trạng thái pin (0 - 100)
+          this.isOn = false; // Trạng thái điện thoại
+          this.draftMessage = ""; // Tin nhắn đang soạn
+          this.inbox = []; // Hộp thư đến
+          this.sentMessages = []; // Tin đã gửi
+        }
+
+        // Kiểm tra trạng thái bật/tắt
+        getStatus() {
+          return this.isOn ? "Đang bật" : "Đang tắt";
+        }
+
+        // Bật máy
+        turnOn() {
+          if (this.battery > 0) {
+            this.isOn = true;
+          }
+        }
+
+        // Tắt máy
+        turnOff() {
+          this.isOn = false;
+        }
+
+        // Sạc pin (tăng lên tối đa 100)
+        chargeBattery(amount = 10) {
+          this.battery = Math.min(100, this.battery + amount);
+        }
+
+        // Soạn tin nhắn
+        composeMessage(message) {
+          if (!this.isOn) return;
+          this.draftMessage = message;
+          this.battery -= 1;
+        }
+
+        // Gửi tin nhắn đến một điện thoại khác
+        sendMessage(toMobile) {
+          if (!this.isOn || this.battery <= 0 || !this.draftMessage) return;
+
+          // Gửi và ghi lại tin nhắn
+          toMobile.receiveMessage(this.draftMessage, this.name);
+          this.sentMessages.push(this.draftMessage);
+          this.draftMessage = "";
+          this.battery -= 2;
+        }
+
+        // Nhận tin nhắn
+        receiveMessage(message, from) {
+          if (!this.isOn) return;
+          const msg = `Từ ${from}: ${message}`;
+          this.inbox.push(msg);
+          this.battery -= 1;
+        }
+
+        // Xem hộp thư đến
+        viewInbox() {
+          if (!this.isOn) return [];
+          return this.inbox;
+        }
+
+        // Xem tin nhắn đã gửi
+        viewSentMessages() {
+          if (!this.isOn) return [];
+          return this.sentMessages;
+        }
+      }
+
+      const phoneA = new Mobile("Điện thoại A");
+      const phoneB = new Mobile("Điện thoại B");
+
+      // Bật cả hai máy
+      phoneA.turnOn();
+      phoneB.turnOn();
+
+      // A soạn tin và gửi cho B
+      phoneA.composeMessage("Chào bạn!");
+      phoneA.sendMessage(phoneB);
+
+      // In kết quả
+      console.log("📥 Hộp thư đến của B:", phoneB.viewInbox());
+      console.log("📤 Tin đã gửi của A:", phoneA.viewSentMessages());
+      console.log("🔋 Pin A:", phoneA.battery);
+      console.log("🔋 Pin B:", phoneB.battery);
+    </script>
+  </body>
+</html>
