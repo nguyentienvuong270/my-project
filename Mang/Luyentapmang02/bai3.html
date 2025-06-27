@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 3</title>
+  </head>
+  <body>
+    <script>
+      let arr = ["a", "1", "b", "3", "5", "x", "9", "z", "0"];
+
+      let sum = 0;
+
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= "0" && arr[i] <= "9") {
+          sum++;
+        }
+      }
+
+      console.log("Số ký tự là chữ số từ 0 đến 9 trong mảng là:", sum);
+    </script>
+  </body>
+</html>

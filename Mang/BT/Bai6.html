@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <script>
+      // Bài 1: Nối mảng thành chuỗi
+      let myColor = ["Red", "Green", "White", "Black"];
+      let joinedColors = myColor.join(",");
+      console.log("Bài 1 - Kết quả:", joinedColors);
+
+      // Bài 2: Chèn dấu '-' giữa các số chẵn
+      let numberInput = "025468";
+      let result = numberInput[0];
+
+      for (let i = 1; i < numberInput.length; i++) {
+        let prev = parseInt(numberInput[i - 1]);
+        let curr = parseInt(numberInput[i]);
+
+        if (prev % 2 === 0 && curr % 2 === 0) {
+          result += "-" + curr;
+        } else {
+          result += curr;
+        }
+      }
+      console.log("Bài 2 - Kết quả:", result);
+
+      // Bài 3: Chuyển đổi chữ hoa ↔ chữ thường
+      let textInput = "The Quick Brown Fox";
+      let swapped = "";
+
+      for (let i = 0; i < textInput.length; i++) {
+        let char = textInput[i];
+        if (char === char.toUpperCase()) {
+          swapped += char.toLowerCase();
+        } else {
+          swapped += char.toUpperCase();
+        }
+      }
+      console.log("Bài 3 - Kết quả:", swapped);
+    </script>
+  </body>
+</html>

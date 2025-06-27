@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function tinhGiaiThua(n) {
+        if (n < 0) {
+          return "Không tính được giai thừa của số âm";
+        }
+        if (n === 0 || n === 1) {
+          return 1;
+        }
+        return n * tinhGiaiThua(n - 1);
+      }
+      console.log("5! =", tinhGiaiThua(5)); 
+      console.log("0! =", tinhGiaiThua(0)); 
+      console.log("1! =", tinhGiaiThua(1)); 
+      console.log("-3! =", tinhGiaiThua(-3)); 
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+<body>
+     <script>
+        let nhietDo = prompt("Nhập nhiệt độ hiện tại:");
+        nhietDo = Number(nhietDo);
+
+        if (isNaN(nhietDo)) {
+            alert("Vui lòng nhập một số hợp lệ!");
+        } else {
+            if (nhietDo > 100) {
+                alert("Nhiệt độ quá cao, vui lòng giảm nhiệt độ!");
+            } else if (nhietDo < 20) {
+                alert("Nhiệt độ quá thấp, vui lòng tăng nhiệt độ!");
+            } else {
+                alert("Nhiệt độ bình thường.");
+            }
+        }
+    </script>
+</body>
+</html>

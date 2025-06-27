@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 5</title>
+  </head>
+  <body>
+    <script>
+      let input = prompt("Nhập vào một chuỗi các số, cách nhau bằng dấu phẩy:");
+
+      let arr = input.split(",").map(Number);
+
+      let countNegative = 0;
+
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < 0) {
+          countNegative++;
+        }
+      }
+
+      console.log("Số lượng số nguyên âm trong chuỗi là: " + countNegative);
+    </script>
+  </body>
+</html>

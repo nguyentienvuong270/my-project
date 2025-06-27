@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let arr = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let arr2 = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]; 
+
+        function translate(word){
+            let index = -1;
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i].toLowerCase() === word.toLowerCase()){
+                    index = i;
+                    break;
+                }
+            }
+            if (index == -1){
+                alert("Không có ngôi sao này");
+            }else{
+                let newWord = arr2[index];
+                alert("Ngôi sao bạn cần tìm là:" + newWord);
+            }
+        }
+
+        let input = prompt("Nhập tên ngôi sao bạn cần tìm: ");
+        translate(input);
+    </script>
+</body>
+</html>

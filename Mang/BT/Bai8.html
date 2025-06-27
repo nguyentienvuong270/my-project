@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Trò chơi Cờ Caro 3x3</h2>
+
+    <table id="board"></table>
+
+    <div id="status">Lượt của người chơi: X</div>
+    <button id="resetBtn" onclick="resetGame()">Chơi lại</button>
+    <script>
+      const boardSize = 3;
+      let currentPlayer = "X";
+      let board = [];
+
+      function createBoard() {
+        const table = document.getElementById("board");
+        table.innerHTML = "";
+        board = [];
+
+        for (let i = 0; i < boardSize; i++) {
+          const row = [];
+          const tr = document.createElement("tr");
+          for (let j = 0; j < boardSize; j++) {
+            row.push(".");
+            const td = document.createElement("td");
+            td.textContent = ".";
+            td.dataset.row = i;
+            td.dataset.col = j;
+            td.addEventListener("click", handleMove);
+            tr.appendChild(td);
+          }
+          board.push(row);
+          table.appendChild(tr);
+        }
+      }
+
+      function handleMove(event) {
+        const row = parseInt(event.target.dataset.row);
+        const col = parseInt(event.target.dataset.col);
+
+        if (board[row][col] !== ".") return;
+
+        board[row][col] = currentPlayer;
+        event.target.textContent = currentPlayer;
+
+        if (checkWin(currentPlayer)) {
+          document.getElementById(
+            "status"
+          ).textContent = `Người chơi ${currentPlayer} thắng!`;
+          disableBoard();
+          return;
+        }
+
+        if (isBoardFull()) {
+          document.getElementById("status").textContent = "Hòa!";
+          return;
+        }
+
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
+        document.getElementById(
+          "status"
+        ).textContent = `Lượt của người chơi: ${currentPlayer}`;
+      }
+
+      function checkWin(player) {
+        // Hàng ngang và dọc
+        for (let i = 0; i < boardSize; i++) {
+          if (board[i].every((cell) => cell === player)) return true;
+          if (board.map((row) => row[i]).every((cell) => cell === player))
+            return true;
+        }
+
+        // Đường chéo
+        if (board.map((row, i) => row[i]).every((cell) => cell === player))
+          return true;
+        if (
+          board
+            .map((row, i) => row[boardSize - 1 - i])
+            .every((cell) => cell === player)
+        )
+          return true;
+
+        return false;
+      }
+
+      function isBoardFull() {
+        return board.every((row) => row.every((cell) => cell !== "."));
+      }
+
+      function disableBoard() {
+        const tds = document.querySelectorAll("td");
+        tds.forEach((td) => td.removeEventListener("click", handleMove));
+      }
+
+      function resetGame() {
+        currentPlayer = "X";
+        document.getElementById("status").textContent =
+          "Lượt của người chơi: X";
+        createBoard();
+      }
+
+      // Khởi tạo khi tải trang
+      createBoard();
+    </script>
+  </body>
+</html>

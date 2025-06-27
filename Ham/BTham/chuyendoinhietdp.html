@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Chuyển đổi từ độ F sang độ C</h2>
+    <label for="fahrenheit">Nhập độ F:</label><br />
+    <input type="number" id="fahrenheit" placeholder="Ví dụ: 100" /><br />
+
+    <button onclick="convertToCelsius()">Chuyển đổi</button>
+
+    <p id="result"></p>
+
+    <script>
+      function convertToCelsius() {
+        const f = parseFloat(document.getElementById("fahrenheit").value);
+        if (isNaN(f)) {
+          document.getElementById("result").textContent =
+            "Vui lòng nhập một số hợp lệ.";
+          return;
+        }
+        const c = (f - 32) / 1.8;
+        document.getElementById("result").textContent = `${f}°F = ${c.toFixed(
+          2
+        )}°C`;
+      }
+    </script>
+  </body>
+</html>

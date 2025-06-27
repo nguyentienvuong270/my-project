@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let arr = ["apple", "banana", "cat", "dog", "hello", "goodbye"];
+        let arr2 = ["quả táo", "chuối", "con mèo", "con chó", "xin chào", "tạm biệt"]; 
+
+        function translate(word){
+            let index = -1;
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i].toLowerCase() === word.toLowerCase()){
+                    index = i;
+                    break;
+                }
+            }
+            if (index == -1){
+                alert("Không có từ này");
+            }else{
+                let newWord = arr2[index];
+                alert("Từ bạn cần tìm là:" + newWord);
+            }
+        }
+
+        let input = prompt("Nhập từ bạn cần tìm: ");
+        translate(input);
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm tra năm nhuận</title>
+  </head>
+  <body>
+    <script>
+      let year = +prompt("Nhập năm cần kiểm tra: "); 
+      let kiemtra;
+
+      if (year % 4 === 0) {
+        if (year % 100 === 0) {
+          if (year % 400 === 0) {
+            kiemtra = true;
+          } else {
+            kiemtra = false;
+          }
+        } else {
+          kiemtra = true;
+        }
+      } else {
+        kiemtra = false;
+      }
+
+      if (kiemtra) {
+        console.log(year + " là năm nhuận.");
+      } else {
+        console.log(year + " không phải là năm nhuận.");
+      }
+    </script>
+  </body>
+</html>

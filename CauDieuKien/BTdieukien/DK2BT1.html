@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let canNang = +prompt("Nhập cân nặng của bạn (kg):");
+
+      let chieuCao = +prompt("Nhập chiều cao của bạn (m):");
+
+      if (isNaN(canNang) || isNaN(chieuCao) || chieuCao === 0) {
+        alert("Bạn nhập sai rồi. Vui lòng nhập số hợp lệ!");
+      } else {
+        let bmi = canNang / (chieuCao * chieuCao);
+
+        let ketQua = "";
+
+        if (bmi < 18.5) {
+          ketQua = "Gầy";
+        } else if (bmi < 25) {
+          ketQua = "Bình thường";
+        } else if (bmi < 30) {
+          ketQua = "Thừa cân";
+        } else {
+          ketQua = "Béo phì";
+        }
+
+        alert("Chỉ số BMI của bạn là: " + bmi + "\nPhân loại: " + ketQua);
+      }
+    </script>
+  </body>
+</html>

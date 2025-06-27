@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center style="margin-top: 250px;">
+        <div>
+            <h4>Do you love me?</h4>
+            <button onclick="clickYes()">Yes</button>
+            <button id="btnNo" style="position: absolute;" onmousemove="hoverBtn()">No</button>
+        </div>
+    </center>
+
+    <script>
+
+        function clickYes() {
+            alert("I love you too hẹ hẹ hẹ!!!")
+        }
+
+        function hoverBtn() {
+            // window.innerHeight: lấy chiều cao của màn hình
+            let cachTren = Math.random() * window.innerHeight; // Math.random sẽ random ra số từ 0 => 0.99
+            let cachDuoi = Math.random() * window.innerWidth; // 0 => 9.9
+            document.getElementById("btnNo").style.top = cachTren + "px";
+            document.getElementById("btnNo").style.right = cachDuoi + "px";
+        }
+    </script>
+</body>
+
+</html>

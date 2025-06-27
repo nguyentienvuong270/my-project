@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính nâng cao</title>
+    <style>
+        button {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th colspan="4"><input type="text" readonly id="pheptinh"></th>
+        </tr>
+
+        <tr>
+            <th> <button onclick="getData(event)" value="()">(</button></th>
+            <th> <button onclick="getData(event)" value=")">)</button></th>
+            <th> <button onclick="getData(event)" value="%">%</button></th>
+            <th> <button onclick="clearData()" value="AC">AC</button></th>
+        </tr>
+
+        <tr>
+            <th> <button onclick="getData(event)" value="7">7</button></th>
+            <th> <button onclick="getData(event)" value="8">8</button></th>
+            <th> <button onclick="getData(event)" value="9">9</button></th>
+            <th> <button onclick="getData(event)" value="/">/</button></th>
+        </tr>
+
+        <tr>
+            <th> <button onclick="getData(event)" value="4">4</button></th>
+            <th> <button onclick="getData(event)" value="5">5</button></th>
+            <th> <button onclick="getData(event)" value="6">6</button></th>
+            <th> <button onclick="getData(event)" value="*">x</button></th>
+        </tr>
+
+        <tr>
+            <th> <button onclick="getData(event)" value="1">1</button></th>
+            <th> <button onclick="getData(event)" value="2">2</button></th>
+            <th> <button onclick="getData(event)" value="3">3</button></th>
+            <th> <button onclick="getData(event)" value="-">-</button></th>
+        </tr>
+
+        <tr>
+            <th> <button onclick="getData(event)" value="0">0</button></th>
+            <th> <button onclick="getData(event)" value=".">.</button></th>
+            <th> <button onclick="tinhtoan()" value="=">=</button></th>
+            <th> <button onclick="getData(event)" value="+">+</button></th>
+        </tr>
+
+    </table>
+    <script>
+        let pheptinh ="";
+        function getData(event){
+             let newdata = event.target.value;
+            pheptinh = pheptinh + newdata;
+             document.getElementById("pheptinh").value = pheptinh;
+        }
+
+        function tinhtoan(){
+            let ketqua = eval(pheptinh);
+            document.getElementById("pheptinh").value = ketqua;
+            pheptinh = " ";
+        }
+
+        function clearData(){
+            document.getElementById("pheptinh").value = " ";
+        }
+        
+    </script>
+
+</body>
+
+</html>

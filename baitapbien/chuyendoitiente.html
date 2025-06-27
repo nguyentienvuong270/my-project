@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="vi">
+      <head>
+        <meta charset="UTF-8" />
+        <title>Chuyển Đổi Tiền Tệ</title>
+      </head>
+      <body>
+        <h2>Chuyển đổi tiền tệ</h2>
+        <form id="currencyForm">
+          <label for="amount">Số tiền:</label>
+          <input type="number" id="amount" name="amount" required />
+
+          <br /><br />
+
+          <label for="from">Từ:</label>
+          <select id="from" name="from">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+            <option value="EUR">EUR</option>
+          </select>
+
+          <label for="to">Sang:</label>
+          <select id="to" name="to">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+            <option value="EUR">EUR</option>
+          </select>
+
+          <br /><br />
+
+          <button type="button" onclick="convertCurrency()">Convert</button>
+        </form>
+
+        <h3>Kết quả: <span id="result"></span></h3>
+
+        <script>
+          function convertCurrency() {
+            const amount = parseFloat(document.getElementById("amount").value);
+            const from = document.getElementById("from").value;
+            const to = document.getElementById("to").value;
+
+            if (isNaN(amount) || amount <= 0) {
+              alert("Vui lòng nhập số tiền hợp lệ.");
+              return;
+            }
+
+            const rates = {
+              USD: { VND: 24000, EUR: 0.85, USD: 1 },
+              VND: { USD: 1 / 24000, EUR: 0.000035, VND: 1 },
+              EUR: { USD: 1.18, VND: 28000, EUR: 1 },
+            };
+
+            const rate = rates[from][to];
+            const result = amount * rate;
+
+            document.getElementById("result").textContent =
+              result.toFixed(2) + " " + to;
+          }
+        </script>
+      </body>
+    </html>
+  </body>
+</html>

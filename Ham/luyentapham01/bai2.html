@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 2</title>
+  </head>
+  <body>
+    <button onclick="tangVaHienThi()">Tăng số</button>
+    <h1 id="ketQua"></h1>
+    <script>
+      function tangVaHienThi() {
+        let so = +prompt("Nhập một số:");
+        if (isNaN(so)) {
+          document.getElementById("ketQua").innerText =
+            "Bạn phải nhập một số hợp lệ.";
+        } else {
+          let ketQua = so + 1;
+          document.getElementById("ketQua").innerText = "Kết quả: " + ketQua;
+        }
+      }
+    </script>
+  </body>
+</html>

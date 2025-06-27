@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+
+<body>
+    <input type="number" id="num">
+    <button onclick="bai3()">Kiểm tra</button>
+    <p id="result"></p>
+
+    <script>
+        function bai3() {
+            let a = +document.getElementById("num").value;
+            if (a > 0) {
+                document.getElementById("result").innerText = "Số lớn hơn 0.";
+            } else if (a < 0) {
+                document.getElementById("result").innerText = "Số nhỏ hơn 0.";
+            } else {
+                document.getElementById("result").innerText = "Số bằng 0.";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

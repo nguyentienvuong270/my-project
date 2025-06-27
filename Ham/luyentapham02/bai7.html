@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function doiCho(a, b) {
+        return [b, a];
+      }
+      let x = 5;
+      let y = 10;
+
+      console.log("Trước đổi chỗ:", x, y);
+
+      [x, y] = doiCho(x, y);
+
+      console.log("Sau đổi chỗ:", x, y);
+    </script>
+  </body>
+</html>

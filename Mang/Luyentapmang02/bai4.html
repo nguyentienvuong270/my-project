@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 4</title>
+  </head>
+  <body>
+    <script>
+      let arr = "Xin chao cac ban chuc cac ban hoc tot";
+
+      let tachArray = arr.trim().split(/\s+/);
+
+      let count = 0;
+
+      // Dùng vòng lặp for để đếm
+      for (let i = 0; i < tachArray.length; i++) {
+        if (tachArray[i] !== "") {
+          count++;
+        }
+      }
+
+      console.log("Số từ trong chuỗi là:", count);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isPrime(number) {
+        if (number < 2) return false;
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i == 0) return false;
+        }
+        return true;
+      }
+
+      let number = 21;
+      if (isPrime(number)) console.log(`So ${number} la so nguyen to `);
+      else console.log(`So ${number} khong la so nguyen to`);
+    </script>
+  </body>
+</html>

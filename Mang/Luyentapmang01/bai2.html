@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+<body>
+    <script>
+        let number = [ 1, 5, 12, 9, 31, 17, 10, 2, 7, 11];
+        let max = number[0];
+        let position = 0
+        for ( let i = 1; i < number.length ; i++){
+            if(number[i] > max ){
+                max = number[i];
+                position = i;
+            }
+        }
+        console.log("Phần tử lớn nhất là: " + max );
+        console.log("Vị trí phần tử là: " + position );
+    </script>
+</body>
+</html>

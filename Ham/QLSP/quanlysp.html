@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Add new Product</h2>
+    <input type="text" placeholder="New product" id="newProduct" />
+    <button onclick="add()">add</button>
+
+    <h2>Edit Product</h2>
+    <input type="text" placeholder="Edit" id="editProduct" />
+    <button onclick="saveEdit()">Save Edit</button>
+
+    <h2>Search Products</h2>
+    <input type="text" id="searchInput" placeholder="Search" onkeyup="search()"/>
+
+    <h2>Display All product</h2>
+    <table border="1">
+      <tr>
+        <th>Product Name</th>
+        <th colspan="2">Action</th>
+      </tr>
+
+      <tbody id="data"></tbody>
+    </table>
+
+    <script src="index.js"></script>
+  </body>
+</html>
