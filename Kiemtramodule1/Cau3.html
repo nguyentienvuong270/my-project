@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <h2>Quản Lý Sổ Tiết Kiệm</h2>
+
+  <div>
+    <label>Mã sổ:</label><br>
+    <input type="text" id="maSo"><br>
+
+    <label>Loại tiết kiệm:</label><br>
+    <input type="text" id="loaiTietKiem"><br>
+
+    <label>Họ tên khách hàng:</label><br>
+    <input type="text" id="hoTen"><br>
+
+    <label>CMND:</label><br>
+    <input type="text" id="cmnd"><br>
+
+    <label>Ngày mở sổ (YYYY-MM-DD):</label><br>
+    <input type="text" id="ngayMoSo"><br>
+
+    <label>Số tiền gửi:</label><br>
+    <input type="number" id="soTienGui"><br>
+
+    <button onclick="themSoTietKiem()">Thêm Sổ Tiết Kiệm</button>
+    <button onclick="xoaSoTietKiem()">Xóa Sổ Tiết Kiệm</button>
+  </div>
+
+   <table border="1" id="bangSTK">
+    <thead>
+      <tr>
+        <th>Mã sổ</th>
+        <th>Loại</th>
+        <th>Họ tên</th>
+        <th>CMND</th>
+        <th>Ngày mở</th>
+        <th>Số tiền</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+    <script src="sotietkiem.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

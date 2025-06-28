@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function kiemtra(n1, d1, n2, d2) {
+        if (d1 === 0 || d2 === 0) {
+          console.log("Mẫu số không được bằng 0.");
+          return false;
+        }
+        return n1 * d2 === n2 * d1;
+      }
+
+      let n1 = +prompt("Nhập tử số phân số thứ nhất:");
+      let d1 = +prompt("Nhập mẫu số phân số thứ nhất:");
+      let n2 = +prompt("Nhập tử số phân số thứ hai:");
+      let d2 = +prompt("Nhập mẫu số phân số thứ hai:");
+
+      if (kiemtra(n1, d1, n2, d2)) {
+        alert("Hai phân số bằng nhau.");
+      } else {
+        alert("Hai phân số không bằng nhau.");
+      }
+    </script>
+  </body>
+</html>
